@@ -8,6 +8,10 @@ reciclados = int(input(f'Qual a porcentagem de resíduos reciclados no total(em 
 transporte1 = int(input(f'Qual meio de transporte você usou hoje?\n 1.Transporte público(onibus,metro,trem)\n 2.Bicicleta\n 3.Caminhada\n 4.Carro(combústiveis fósseis)\n 5.Carro elétrico\n 6.Carona compartilhada:  '))
 transporte2 = int(input(f'Você usou outro meio?Se não, aperte 7!\n 1.Transporte público(onibus,metro,trem)\n 2.Bicicleta\n 3.Caminhada\n 4.Carro(combústiveis fósseis)\n 5.Carro elétrico\n 6.Carona compartilhada:  '))
 
+if transporte2 == 7:
+    transporte3=7
+else:
+    transporte3=int(input(f'Você usou outro meio?Se não, aperte 7!\n 1.Transporte público(onibus,metro,trem)\n 2.Bicicleta\n 3.Caminhada\n 4.Carro(combústiveis fósseis)\n 5.Carro elétrico\n 6.Carona compartilhada:  '))
                                                   
 if litros <150:
     print(f'\nConsumo de água: Sustentabilidade alta')
@@ -28,20 +32,41 @@ else:
     print(f'Consumo de energia: Sustentabilidade média')
 
 if residuos >50:
-    print(f'Geração de resíduos não recicláveis: Sustentabilidade alta')
+    print(f'Geração de resíduos não recicláveis: Sustentabilidade baixa')
     vsust += 1
 elif residuos < 20:
-    print(f'Geração de resíduos não recicláveis: Sustentabilidade baixa')
+    print(f'Geração de resíduos não recicláveis: Sustentabilidade alta')
     vnsust += 1
 else:
     print(f'Geração de resíduos não reciclaveis: Sustentabilidade moderada')
 
-if (transporte1 ==1 or transporte1 ==2 or transporte1==3 or transporte1==5) and (transporte2==1 or transporte2==2 or transporte2==3 or transporte2==5):
-    print(f"Transporte: Sustentabilidade alta")
-elif (transporte1== 4 or transporte1==6) and (transporte2==4 or transporte2==6):
-    print(f"Transporte: Sustentabilidade baixa")
+vtransporte=0
+vntransporte=0
+if (transporte1== 1 or transporte1== 2 or transporte1==3 or transporte1==5):
+    vsust+=1
+    vtransporte+=1
+elif (transporte1==4 or transporte1==6):
+    vnsust+=1
+    vntransporte+=1
+if (transporte2==1 or transporte2==2 or transporte2==3 or transporte2==5):
+    vsust+=1
+    vtransporte+=1
+elif (transporte2==4 or transporte2==6):
+    vnsust+=1
+    vntransporte+=1
+if (transporte3==1 or transporte3==2 or transporte3==3 or transporte3==5):
+    vsust+=1
+    vtransporte+=1
+elif (transporte3==4 or transporte3==6):
+    vnsust+=1
+    vntransporte+=1
+
+if vtransporte > vntransporte:
+    print(f'Transporte: Sustentabilidade alta')
+elif vtransporte < vntransporte:
+    print(f'Transporte: Sustentabilidade baixa')
 else:
-    print(f"Transporte: Sustentabilidade média")
+    print(f'Sustentabilidade moderada')
 
 if vsust > vnsust:
     print(f'\nSua sustentabilidade é boa! Pontos sustentáveis: {vsust} e Pontos não sustentáveis: {vnsust}')
