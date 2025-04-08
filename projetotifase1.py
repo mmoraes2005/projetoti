@@ -31,11 +31,11 @@ elif energia >10:
 else:
     print(f'Consumo de energia: Sustentabilidade média')
 
-if residuos >50:
-    print(f'Geração de resíduos não recicláveis: Sustentabilidade baixa')
-    vsust += 1
-elif residuos < 20:
+if reciclados >50:
     print(f'Geração de resíduos não recicláveis: Sustentabilidade alta')
+    vsust += 1
+elif reciclados < 20:
+    print(f'Geração de resíduos não recicláveis: Sustentabilidade baixa')
     vnsust += 1
 else:
     print(f'Geração de resíduos não reciclaveis: Sustentabilidade moderada')
