@@ -1,3 +1,4 @@
+""" Grupo: Murilo Moraes, Vinicius Valim, Guilherme de Oliveira, Alice Beserra e Juan Desiderio."""
 data = input(f'Qual é a data de hoje? ')
 vsust = 0
 vnsust = 0
