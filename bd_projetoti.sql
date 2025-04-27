@@ -13,8 +13,6 @@ CREATE TABLE sustentabilidade (
 
 INSERT INTO sustentabilidade (data, consumo_agua, consumo_energia, geracao_residuos, residuos_reciclaveis, uso_transporte) VALUES ('2025-03-24','Moderada Sustentabilidade','Alta Sustentabilidade','Alta Sustentabilidade','Baixa Sustentabilidade','Baixa Sustentabilidade');
 
-drop table sustentabilidade;
-
 SELECT * FROM sustentabilidade;
 
 SELECT
